@@ -1,0 +1,33 @@
+esphome:
+  name: salt-sensor
+
+esp8266:
+  board: d1_mini
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+# ota:
+#   password: "salt-sensor"
+
+wifi:
+  ssid: "TALKTALK7CE1AB"
+  password: "E39GGRJD"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Salt-Sensor Fallback Hotspot"
+    password: "xPNWrEf39Dkd"
+
+captive_portal:
+
+sensor:
+  - platform: ultrasonic
+    trigger_pin: D1
+    echo_pin: D2
+    name: "Ultrasonic Sensor"
+    update_interval: 1s
+
